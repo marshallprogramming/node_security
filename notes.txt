@@ -31,4 +31,17 @@ account update, etc.
 An application takes trusted data and sends it to a browser without proper escaping. Malicious scripts can
 then be run on a user's machine.
 
-4) 
+4) Insecure Direct Object References
+If an object is exposed then an attacker could change a value to access private information.
+
+5) Security Misconfiguration
+Attacker is able to circumvent security to cause unintended problems.
+
+6) Sensitive Data Exposure
+An attacker can monitor network traffic (such as on open wireless network), and steals user's session
+cookie. Attacker can then replay this cookie and hijacks the user's session, accessing the user's private data.
+
+7) Missing Function Level Access Control
+After accessing one level of the server with a token, attackers could access other areas that they weren't
+supposed to reach.
+
