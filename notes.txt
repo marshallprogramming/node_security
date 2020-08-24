@@ -1,0 +1,34 @@
+OWASP (www.owasp.org)
+
+The 'Open Web Application Security Project'.
+
+Useful resource for cyber security. A wiki of security tips and current cyber attack types.
+
+Right column -> Attacks (to see more info on each attack type)
+Right column -> Code Snippets (for fixes/prevention)
+Right column -> Vulnerabilities (for potential weaknesses)
+
+
+
+///
+
+Node Goat (nodegoat.herokuapp.com)
+
+Nodejs goat project. How to secure against Node JS vulnerabilities specifically.
+
+Top 10 risks (listed on site)
+
+1) Injection
+When eval(), setTimeout(), setInterval(), Function()are used to process user provided inputs, it
+can be exploited by an attacker to inject and execute malicious JavaScript code on server.
+
+2) Broken Authentication and Session Management
+Attackers use leaks or flaws in the authentication or session management functions to impersonate other users.
+Vulnerabilities include flaws in areas such as logout, password management, timeouts, remember me, secret question,
+account update, etc.
+
+3) Cross-site Scripting (XSS)
+An application takes trusted data and sends it to a browser without proper escaping. Malicious scripts can
+then be run on a user's machine.
+
+4) 
