@@ -18,30 +18,82 @@ Nodejs goat project. How to secure against Node JS vulnerabilities specifically.
 
 Top 10 risks (listed on site)
 
+
 1) Injection
 When eval(), setTimeout(), setInterval(), Function()are used to process user provided inputs, it
 can be exploited by an attacker to inject and execute malicious JavaScript code on server.
+
+- Prevent with: Validation of user input, don't use eval
+
+
 
 2) Broken Authentication and Session Management
 Attackers use leaks or flaws in the authentication or session management functions to impersonate other users.
 Vulnerabilities include flaws in areas such as logout, password management, timeouts, remember me, secret question,
 account update, etc.
 
+- Prevent with: hash/encrypt auth credentials, don't expose session ids in url, timeout session ids
+
+
+
 3) Cross-site Scripting (XSS)
 An application takes trusted data and sends it to a browser without proper escaping. Malicious scripts can
 then be run on a user's machine.
 
+- Prevent with: Input validation and data sanitization
+
+
+
 4) Insecure Direct Object References
 If an object is exposed then an attacker could change a value to access private information.
 
+- Prevent with: Access control on exposed objects to confirm user authorization
+
+
+
 5) Security Misconfiguration
 Attacker is able to circumvent security to cause unintended problems.
+
+- Prevent with: Use latest stable node version, don't run applications with root privileges
+
+
 
 6) Sensitive Data Exposure
 An attacker can monitor network traffic (such as on open wireless network), and steals user's session
 cookie. Attacker can then replay this cookie and hijacks the user's session, accessing the user's private data.
 
+- Prevent with: secure https network protocol, encrypt sensitive data
+
+
+
 7) Missing Function Level Access Control
 After accessing one level of the server with a token, attackers could access other areas that they weren't
 supposed to reach.
 
+- Prevent with: auth checks in controller or business logic (instead of just hidden UI access)
+
+
+
+8) Cross-Site Request Forgery (CSRF)
+The user is tricked into sending a forged HTTP request which can send their session cookie or other auth data
+to a vulnerable web application.
+
+- Prevent with: csrf middleware which checks for tokens on each http request
+
+
+
+9) Using Components with Known Vulnerabilities
+Some node components (libraries, frameworks... etc) are out of date and can be exploited. This is because they
+almost always run with full privileges.
+
+- Prevent with: Use up-to-date and well-reviewed modules.
+
+
+
+
+10) Redirects
+An attacker can change the intended behaviour of a link by updating the url query param to send users to malicious
+websites. This exposes the users to phishing or malware attacks.
+
+- Prevent with: Avoid redirects. If used, don't involve user parameters. If using user parameters, ensure valid 
+value and that user is authorized.
